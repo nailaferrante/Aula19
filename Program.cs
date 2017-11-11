@@ -49,7 +49,8 @@ namespace ProjetoEventoConsole
             {
                 Console.WriteLine("Digite a opção desejada:");
                 Console.WriteLine("1 - Cadastrar Show");
-                Console.WriteLine("2 - Pesquisar Show");
+                Console.WriteLine("2 - Pesquisar Show por título");
+                Console.WriteLine("3 - Pesquisar Show por data");
                 Console.WriteLine("9 - Voltar");
 
                 opcao = Console.ReadLine();
@@ -85,14 +86,26 @@ namespace ProjetoEventoConsole
                     else{
                         Console.WriteLine("Erro ao gravar!");
                     }
-                    
-
                         break;
 
                     case "2":
+                        Console.WriteLine("Digite o título a ser pesquisado:");
+                        string pesquisatitulo = Console.ReadLine();
+                        Show showpesquisatitulo = new Show();
+                        string resultadopesquisa = showpesquisatitulo.Pesquisar(pesquisatitulo);
+                        Console.WriteLine(resultadopesquisa);
+
                         break;
 
                     case "3":
+                        Console.WriteLine("Digite a data a ser pesquisada:");
+                        DateTime pesquisadata = Convert.ToDateTime(Console.ReadLine());
+                        Show showpesquisadata = new Show();
+                        string resultadopesquisadata = showpesquisadata.Pesquisar(pesquisadata);
+                        Console.WriteLine(resultadopesquisadata);
+                        break;
+                    
+                    case "4":
                         break;
                     
                     case "9":
